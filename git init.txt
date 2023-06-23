@@ -1,0 +1,11 @@
+"git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/LeeJungHoon1/LeeJungHoon1.git
+git push -u origin main
+
+
+★git config --global user.name "LeeJungHoon1"
+
+★git config --global user.email "zkscy980@gmail.com"
