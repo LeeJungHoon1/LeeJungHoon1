@@ -7,22 +7,13 @@
 </head>
 <body>
     <script>
-
-        /*
-3.  구구단 ( 2단 출력) 
-   - console.log( ) 
-   - document.write()
-
-*/
-
-    for(let i=1; i<10; i++){     
-            document.write(i*2);
-            console.log(i*2);
-         }
-        
-    
-
-
+        for(let i=2; i<6; i++){
+            document.write(i+"단 <br>")
+            for(let j=1; j<10; j++)
+            {
+                document.write(i+" * "+j+" = "+i*j+"<br>")
+            }
+        }
     </script>
 </body>
 </html>

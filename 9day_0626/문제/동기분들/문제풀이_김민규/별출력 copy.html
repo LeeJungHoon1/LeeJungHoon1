@@ -7,23 +7,30 @@
 </head>
 <body>
     <script>
+        
+        let star=("*")
 
-/*
-  6. 구구단 while, do~ while  해결하기
-*/
-    let j =0;
-    let n =0;
-    while(n<10){
-        do{
-            document.write(j*n);
-            j++;
+        for(let i=3 ; i>=1 ; i--){
             document.write("<br>");
-        }while(j<10);
-        document.write("<br>");
-        n++;
-        j=1;
-    }
+
+
+
+           for(let j=1 ; j<=i ; j++){
+
+            document.write(star);
+            
+           }
+           
+            
+        }
+
+
+
+
+
+
+
+
     </script>
-    
 </body>
 </html>

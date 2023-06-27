@@ -5,24 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body> 
     <script>
 
-        /*
-3.  구구단 ( 2단 출력) 
-   - console.log( ) 
-   - document.write()
+/* 4.  2~5단까지 출력하기 ( 2~5단) */
 
-*/
-
-    for(let i=1; i<10; i++){     
-            document.write(i*2);
-            console.log(i*2);
-         }
-        
-    
-
-
+for(let i = 2; i <= 5; i++) {
+    document.write(i + "단"+ "<br>");
+for(let j = 1; j <= 9; j++) {
+    document.write(i + ' * ' + j + ' = ' + (i*j) + "<br>");
+  }
+}
     </script>
 </body>
 </html>

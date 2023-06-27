@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+
     <script>
 
-/*
-  6. 구구단 while, do~ while  해결하기
-*/
-    let j =0;
-    let n =0;
-    while(n<10){
-        do{
-            document.write(j*n);
-            j++;
+
+        let i = 2
+        while (i <= 9) {
+            let j = 1
+            while (j <= 9) {
+                document.write(i + "*" + j + "=" + i * j + "<br>");
+                j++;
+            }
+            i++
             document.write("<br>");
-        }while(j<10);
-        document.write("<br>");
-        n++;
-        j=1;
-    }
+        }
+
+
+
     </script>
-    
+
+
+
 </body>
+
 </html>
