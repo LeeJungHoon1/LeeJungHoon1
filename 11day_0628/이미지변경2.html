@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <img src="imgs/boy.png" onclick="changeImg()" id="content">
+
+
+
+
+    <script>
+        let imgs = true;
+        function changeImg(){
+            let contentE = document.getElementById("content");
+            if(imgs == true){
+                contentE.src="imgs/girl.png";
+                imgs =false;
+            }else{
+                contentE.src="imgs/boy.png";
+                imgs = true;
+            }
+            // 이미지태그 선택
+            // src 속성
+        }
+
+    </script>
+</body>
+</html>
