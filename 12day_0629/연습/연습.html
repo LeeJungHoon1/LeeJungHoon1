@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap{
+            width: 800px;
+            border: 1px solid black;
+            margin:0 auto;
+            padding:40px;
+            text-align:center;
+        }
+        .main{
+            width:800px;
+            height:50px;
+            margin:0 auto;
+        }
+        .review{
+            display: flex;
+        }
+        .review_a{
+            width:400px;
+            padding:20px;
+        }
+        .review_b{
+            width:400px;
+            padding:20px;
+        }
+        p{
+            font-weight: 600;
+        }
+        .img{
+            width:200px;
+            height:150px;
+            margin:0 auto;
+        }
+        .small_img{
+            margin: right 10px;
+            width:50px;
+            height:50px;
+            
+        }
+        .info_a{
+            width:800px;
+            margin:0 auto;
+            display: flex;
+            justify-content: center;
+            padding-top: 40px;
+            padding-bottom: 100px;
+        }
+        .info_a  p{
+            width:250px;
+            height:20px;
+            margin: 0;
+            
+        }
+        .info_a_textbox{
+            width:250px;
+        }
+        .info_b{
+            text-align: left; 
+            margin: 0 auto;
+            padding:20px;   
+        }
+        .info_b_textbox{
+            width:100%;
+        }
+        .info_c{
+            text-align: left;  
+            padding:20px;              
+        }
+        .info_c_textbox{
+            width:100%;
+            height:40px;
+             
+        }
+    </style>
+</head>
+<body>
+    <div class = "wrap">
+        <div class="main">
+            <h2 class="title">REIVEW</h2>
+        </div>
+        <div class="review">
+            <div class="review_a">
+                <p>이미지</p>
+                <img src="../연습/imgs/너구리1.jpg" class="img" id="img">
+                <div class="small">
+                    <img src="../연습/imgs/너구리1.jpg" class="small_img" onclick="changeImg1()">
+                    <img src="../연습/imgs/너구리2.jpg" class="small_img" onclick="changeImg2()">
+                    <img src="../연습/imgs/너구리3.jpg" class="small_img" onclick="changeImg3()">
+                </div>
+            </div>
+            <div class="review_b">
+                <p>후기</p>
+                <textarea cols="40" rows="10"></textarea>
+            </div>
+        </div>
+        <div class = "info_a">
+            <div>
+                <p>연령대</p>
+                <input type="text" class="info_a_textbox">
+            </div>
+            <div>
+                <p>만족도</p>
+                <input type="text" class="info_a_textbox">
+            </div>
+            <div>
+                <p>성별</p>
+                <input type="text" class="info_a_textbox">
+            </div>
+        </div>
+        <div class="info_b">
+            <p>판매점 정보(구매사이트)</p>
+            <input type="text" class="info_b_textbox">
+        </div>
+        <div class="info_c">
+            <p>나누고싶은정보</p>
+            <input type="text" class="info_c_textbox">
+        </div>
+    </div>
+
+    <script>
+        function changeImg1(){
+        let imgE = document.getElementById("img");
+        imgE.src="../연습/imgs/너구리1.jpg";
+		}
+		function changeImg2(){
+			let imgE = document.getElementById("img");
+			imgE.src="../연습/imgs/너구리2.jpg";
+		}
+		function changeImg3(){
+			let imgE = document.getElementById("img");
+			imgE.src = "../연습/imgs/너구리3.jpg";
+		}
+
+    </script>
+</body>
+</html>

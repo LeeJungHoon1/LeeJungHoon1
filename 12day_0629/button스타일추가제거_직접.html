@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+
+
+
+
+    <div id="mybtn">버튼</div>
+    <div id="content">내용입니다.</div>
+    <button onclick="style1()">배경색</button>
+    <button onclick ="style2()">배경이미지</button>
+    <button onclick="style3()">배경색없애기</button>
+    <button onclick ="style4()">이미지없애기</button>
+    <button onclick ="style5()">내용바꾸기</button>
+
+
+    <script>
+        function style1(){
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.width="100px";
+            mybtn.style.height="50px";
+            mybtn.style.backgroundColor="green";
+        }
+   
+        function style2(){
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.width="100px";
+            mybtn.style.height="50px";
+            mybtn.style.backgroundImage="url(https://www.sciencetimes.co.kr/wp-content/uploads/2017/10/171024-raccoon-365366_960_720.jpg)";
+            mybtn.style.backgroundSize="cover";
+            mybtn.style.backgroundPosition="center";
+
+        }
+        //이미지색깔 없애기
+        function style3(){        
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.backgroundColor="transparent"
+        }
+        //이미지색깔 없애기
+        function style4(){
+            let mybtn = document.getElementById("mybtn");
+
+            mybtn.style.backgroundImage="none"
+            }
+
+        function style5(){
+        let content = document.getElementById("content");
+
+        content.innerHTML="새로운 내용"
+
+            
+        }
+
+    </script>
+</body>
+</html>
