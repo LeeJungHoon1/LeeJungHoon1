@@ -11,6 +11,7 @@
             margin:0 auto;
             padding:40px;
             text-align:center;
+            border-radius: 5%;
         }
         .main{
             width:800px;
@@ -35,11 +36,15 @@
             width:200px;
             height:150px;
             margin:0 auto;
+            border: 1px solid gray;
+            border-radius: 10%;
         }
         .small_img{
             margin: right 10px;
             width:50px;
             height:50px;
+            border: 1px solid gray;
+            border-radius: 10%;
             
         }
         .info_a{
@@ -49,6 +54,7 @@
             justify-content: center;
             padding-top: 40px;
             padding-bottom: 100px;
+            
         }
         .info_a  p{
             width:250px;
@@ -58,6 +64,7 @@
         }
         .info_a_textbox{
             width:250px;
+            
         }
         .info_b{
             text-align: left; 
@@ -86,12 +93,12 @@
         <div class="review">
             <div class="review_a">
                 <p>이미지</p>
-                <img src="../연습/imgs/너구리1.jpg" class="img" id="img">
-                <div class="small">
-                    <img src="../연습/imgs/너구리1.jpg" class="small_img" onclick="changeImg1()">
-                    <img src="../연습/imgs/너구리2.jpg" class="small_img" onclick="changeImg2()">
-                    <img src="../연습/imgs/너구리3.jpg" class="small_img" onclick="changeImg3()">
-                </div>
+                <img src="../연습/imgs/너구리1.jpg" class="img" id="big_img">
+                    <div class="small">
+                        <img src="../연습/imgs/너구리1.jpg" class="small_img" onclick="changeImg1()">
+                        <img src="../연습/imgs/너구리2.jpg" class="small_img" onclick="changeImg2()">
+                        <img src="../연습/imgs/너구리3.jpg" class="small_img" onclick="changeImg3()">
+                    </div>
             </div>
             <div class="review_b">
                 <p>후기</p>
@@ -124,15 +131,15 @@
 
     <script>
         function changeImg1(){
-        let imgE = document.getElementById("img");
+        let imgE = document.getElementById("big_img");
         imgE.src="../연습/imgs/너구리1.jpg";
 		}
 		function changeImg2(){
-			let imgE = document.getElementById("img");
+			let imgE = document.getElementById("big_img");
 			imgE.src="../연습/imgs/너구리2.jpg";
 		}
 		function changeImg3(){
-			let imgE = document.getElementById("img");
+			let imgE = document.getElementById("big_img");
 			imgE.src = "../연습/imgs/너구리3.jpg";
 		}
 
