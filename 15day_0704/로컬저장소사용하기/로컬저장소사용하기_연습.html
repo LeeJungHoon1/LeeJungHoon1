@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let a=["나에게로 떠나는 여행","비망록","남자를 몰라","거짓말","가시"];
+
+        let result = JSON.stringify(a);
+
+
+        console.log(result);
+
+        localStorage.setItem("abc", result);
+
+        let a2 =localStorage.getItem("abc");
+
+        let a3 = JSON.parse(a2);
+        console.log(a3);
+
+
+
+
+
+    </script>
+</body>
+</html>

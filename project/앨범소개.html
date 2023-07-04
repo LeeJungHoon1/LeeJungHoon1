@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         ul{
             list-style:none;
         }
@@ -20,6 +21,7 @@
             margin:0 auto;
             padding-top: 10px;
             font-weight: 500;
+            margin-bottom: 10px;
         }
         .album{
             border:0.5px solid black;
@@ -32,7 +34,10 @@
         }
         .album_des{
             border:0.5px solid black;
-            width:700px
+            width:700px;
+            position: relative;
+
+            
         }
         .album_img > img{
             width: 300px;
@@ -40,15 +45,45 @@
         }
         .group{
             margin-bottom: 0px;
+            position: relative;
+            left:20px;
+            bottom: 2px;
         }
         .album_title{
             border:0.5px solid black;
             margin:0 auto;
             font-weight: 500;
+            position: relative;
+            left:20px;
+        }
+        .album_title2{
+            border:0.5px solid black;
+            font-weight: 500;
+            position: relative;
+            left:20px;
+            color: #00CD3C;
+        }
+        .list1{
+            margin: 0;
+            position: relative;
+            top:3px;
+            left:20px;
+            display: inline;
+
+        }
+        .list2{
+            position: relative;
+            top:3px;
+            right: 3px;
         }
         dt{
             float:left;
+            margin-right: 10px;
         }
+        .like{
+            position: relative;
+        }
+        
 
 
 
@@ -75,23 +110,40 @@
                 <p class="group">[싱글]</p>
                 <!--제목-->
                 <h2 class="album_title">Summer Dance</h2>
+                <!--가수-->
+                <span class="album_title2">네이비쿼카 (NavyQuokka)</span>
                 <!--설명-->
-               <dl>
-                   <dt>장르
-                    <dd>2023.06.30</dd>
-                   </dt>
-                   <dt>발매일
-                    <dd>R&B/Soul, 인디음악</dd>
-                   </dt>
-                   <dt>발매사
-                    <dd>YG PLUS</dd>
-                   </dt>
-                   <dt>기획사
-                    <dd>NavyQuokka</dd>
-                   </dt>
-               </dl>
+                <div class="list1">
+                    <dl>
+                    <dt>장르
+                        <dd>2023.06.30</dd>
+                    </dt>
+                    <dt>발매일
+                        <dd>R&B/Soul, 인디음악</dd>
+                    </dt>
+                    <dt>발매사
+                        <dd>YG PLUS</dd>
+                    </dt>
+                    <dt>기획사
+                        <dd>NavyQuokka</dd>
+                    </dt>
+                </dl>
+                </div>
+                <div class="list2">
+                    <dl>
+                        <dt><img src="" >
+                            <dd>1명 <span>></span></dd>
+                        </dt>
+                        <dt>
+                            <dd></dd>
+                        </dt>
+                        <dt>
+                            <dd></dd>
+                        </dt>
+                    </dl>
+                </div>
                 <!--하트,다운,선물-->
-                <div></div>
+                <div class="like"></div>
             </div>
         </div>
 
