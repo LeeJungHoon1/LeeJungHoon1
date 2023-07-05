@@ -20,52 +20,57 @@
             border:0.5px solid black;
             margin:0 auto;
             padding-top: 10px;
+            padding-left: 10px;
             font-weight: 500;
             margin-bottom: 10px;
             
         }
         .album{
-            border:0.5px solid black;
+            border:0.5px solid rgba(0,0,0,0.5);
             display: flex;
         }
         .album_img{
-            border:0.5px solid black;
             width: 300px;
-            height: 300px;
+            height: 270px;
+            position: relative;
         }
         .album_des{
-            border:0.5px solid black;
             width:700px;
             position: relative;
         }
-        .album_img > img{
+        .album_main_img{
             width: 300px;
-            height: 300px;
+            height: 270px;
+            position: absolute;
+        }
+        .play_img{
+            position: absolute;
+            top:7px;
+            right:15px;
+            width: 60px;
+            
         }
         .group{
+            margin-top: 20px;
             margin-bottom: 0px;
-            position: absolute;
-            top: 11px;
-            left:25px;
+            padding-left: 30px ;
         }
         .album_title{
-            margin:0 auto;
+            margin-top: 0px;
+            margin-bottom: 5px;
             font-weight: 500;
-            position: absolute;
-            top: 44px;
-            left:25px;
+            padding-left: 30px ;
+
         }
         .album_title2{
+            margin-bottom: 10px;
             font-weight: 500;
-            position: absolute;
-            top: 77px;
-            left:25px;
+            padding-left: 30px ;
             color: #00CD3C;
         }
         .list1{
-            position: absolute;
-            top:90px;
-            left:25px;
+            margin: 0;
+            padding-left: 30px ;
         }
         .list2{
             width: 190px;
@@ -73,15 +78,19 @@
             top:90px;
             right:25px;
         }
+        .list1 dl{
+            margin: 0;
+            padding-top: 15px;
+        }
         .list1 dt{
             font-size: 13px;
             float:left;
-            padding-top: 6px;
+            padding-bottom: 6px;
             color:rgba(0,0,0,0.5);
         }
         .list1 dd{
             font-size: 13px;
-            padding-top: 6px;
+            padding-bottom: 6px;
             margin-left: 60px;
             color:rgba(0,0,0,0.8);
         }
@@ -109,9 +118,6 @@
         }
         .arrow{
             color:rgba(0,0,0,0.5);
-        }
-        .like{
-            position: absolute;
         }
         .user{
             background-image: url(../project/imgs/user.jpg);
@@ -145,10 +151,87 @@
             width: 18px;
             height: 18px;
         }
-        .like{
-            border: 1px solid black;
-            width: 500px;
-            height: 30px;
+        .like_list{
+            margin-top: 5px;
+            padding-left: 20px ;
+            height: 40px;
+        }
+        .like_btn{
+            height: 40px;
+            margin-right: 10px;
+            font-size: 17px;
+            padding:0px;
+            border: 0;
+            background-color: white;
+        }
+        .heart{
+            display: inline-block;
+            background-image: url(../project/imgs/heart.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+        }
+        .down{            
+            display: inline-block;
+            background-image: url(../project/imgs/down1.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+        }
+        .down{            
+            display: inline-block;
+            background-image: url(../project/imgs/down1.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+        }
+        .gift{            
+            display: inline-block;
+            background-image: url(../project/imgs/gift.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+
+        }
+        .like_str{
+            display: inline-block;
+            margin-left: 5px;
+            text-align:inherit;
+        }
+        .down2{
+            display: inline-block;
+            background-image: url(../project/imgs/down2.png);
+            background-position: center;
+            background-size: cover;
+            width: 10px;
+            height: 10px;
+        }
+        .songs_btn1{
+            border: 0.5px solid;
+            border-color: rgba(94, 94, 94, 0.5);
+            border-radius: 20px 20px 20px 20px;
+            background-color: red;
+            /* box-shadow: 0; */
+            width: 50px;
+            height: 26px;
+            padding: 0;
+        }
+        .songs_btn{
+            border: 0.5px solid;
+            border-color: rgba(94, 94, 94, 0.5);
+            border-radius: 20px 20px 20px 20px;
+            background-color: pink;
+            /* box-shadow: 0; */
+            width: 50px;
+            height: 26px;
+            padding: 0;
+        }
+        .down3{
+            border: 1px solid black
         }
     </style>
 </head>
@@ -163,7 +246,8 @@
         <div class="album">
             <!--앨범이미지-->
             <div class ="album_img">
-                <img src="../project/imgs/네이비쿼카이미지.jpg">
+                <img src="../project/imgs/네이비쿼카이미지.jpg" class="album_main_img">
+                <img src="../project/imgs/play.png" class="play_img">
             </div>
             <!--앨범정보-->
             <div class="album_des">
@@ -215,14 +299,73 @@
                         </dd>
                     </dl>
                 </div>
-                <!--하트,다운,선물-->
-                <div class="like"></div>
+                <!--좋아요,다운,선물-->
+                <div class="like_list">
+                    <!--좋아요-->
+                    <button class="like_btn">
+                        <span class="heart"></span>
+                        <span class="like_str">좋아요</span>
+                    </button>
+                    <!--앨범다운-->
+                    <button class="like_btn">
+                        <span class="down"></span>
+                        <span class="like_str">앨범다운</span>
+                        <span class="arrow">></span>
+                    </button>
+                    <!--FLAC다운-->
+                    <button class="like_btn">
+                        <span class="down"></span>
+                        <span class="like_str">FLAC앨범다운</span>
+                        <span class="arrow">></span>
+                    </button>
+                    <!--선물-->
+                    <button class="like_btn">
+                        <span class="gift"></span>  
+                        <span class="like_str">선물하기</span>
+                        <span class="arrow">></span>
+                    </button>
+                </div>
             </div>
         </div>
 
         <!--제목:수록곡-->
         <div>
             <h2 class = title> 수록곡</h2>
+        </div>
+        <!--수록곡-->
+        <div>
+            <!--수록곡 버튼-->
+            <div>
+                <!--듣기버튼-->
+                <button class="songs_btn1">
+                    <span class="down3"><img src="./imgs/play2.png"
+                        style=" width: 10px; height:10px"></span>
+                    <!-- <div></div> -->
+                </button >
+                <!--담기버튼-->
+                <button class="songs_btn1">
+                    <div class="down3"><img src="./imgs/play2.png"
+                        style=" width: 10px; height:10px"></div>
+                    <!-- <div></div> -->
+                </button >
+                <!--다운버튼-->
+                <button class="songs_btn">
+                    <span></span>
+                    <span></span>
+                </button>
+                <!--FLAc버튼-->
+                <button class="songs_btn">
+                    <span></span>
+                    <span></span>
+                </button>
+                <!--선물버튼-->
+                <button class="songs_btn">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <!--수록곡 목록-->
+            <div></div>
         </div>
 
         <!--수록곡 정보-->
