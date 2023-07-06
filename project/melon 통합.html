@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            /* border:0.5px solid black; */
+            width:1008px;
+            padding: 20px 20px;
+            margin:0 auto;
+
+        }
+        .title{
+            /* border:0.5px solid black; */
+            margin:0 auto;
+            padding-top: 10px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        /* 앨범정보 */
+        .album{
+            border:1px solid rgba(0,0,0,0.3);
+            display: flex;
+        }
+        .album_img{
+            width: 300px;
+            height: 270px;
+            position: relative;
+        }
+        .album_des{
+            width:700px;
+            position: relative;
+        }
+        .album_main_img{
+            width: 300px;
+            height: 270px;
+            position: absolute;
+        }
+        .play_img{
+            position: absolute;
+            top:7px;
+            right:15px;
+            width: 60px;
+            
+        }
+        .group{
+            margin-top: 20px;
+            margin-bottom: 0px;
+            padding-left: 30px ;
+        }
+        .album_title{
+            margin-top: 0px;
+            margin-bottom: 5px;
+            font-weight: 500;
+            padding-left: 30px ;
+
+        }
+        .album_title2{
+            margin: 0;
+            margin-bottom: px;
+            font-weight: 500;
+            padding-left: 30px ;
+            color: #00CD3C;
+        }
+        .list1{
+            margin: 0;
+            padding-left: 30px ;
+        }
+        .list2{
+            width: 190px;
+            position: absolute;
+            top:90px;
+            right:25px;
+        }
+        .list1 dl{
+            margin: 0;
+            padding-top: 15px;
+        }
+        .list1 dt{
+            font-size: 13px;
+            float:left;
+            padding-bottom: 6px;
+            color:rgba(0,0,0,0.5);
+        }
+        .list1 dd{
+            font-size: 13px;
+            padding-bottom: 6px;
+            margin-left: 60px;
+            color:rgba(0,0,0,0.8);
+        }
+        .list2 dt{
+            float: left;
+            text-align: right;
+            width: 100px;
+            font-size: 13px;
+            padding-top: 10px;
+            color:rgba(0,0,0,0.5);
+        }
+        .list2 dt span{
+            font-size: 12px;
+            color: #00CD3C;
+        }
+        .list2 dd{
+            float:right;
+            font-size: 13px;
+            padding-top: 10px;
+            margin: 0;    
+        }
+        .arrow_name{
+            float: left;
+            color:rgba(0,0,0,0.8);
+        }
+        .arrow{
+            color:rgba(0,0,0,0.5);
+        }
+        .user{
+            background-image: url(../project/imgs/user.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border: 0px;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            margin-right: 3px;
+        }
+        .facebook{
+            background-image: url(../project/imgs/facebook.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border:0px;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            margin-right: 3px;
+        }
+        .twitter{
+            background-image: url(../project/imgs/twitter.jpg);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 0px;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+        }
+        .like_list{
+            margin-top: 5px;
+            padding-left: 20px ;
+            height: 40px;
+        }
+        .like_btn{
+            height: 40px;
+            margin-right: 10px;
+            font-size: 17px;
+            padding:0px;
+            border: 0;
+            background-color: white;
+        }
+        .heart{
+            display: inline-block;
+            background-image: url(../project/imgs/heart.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top:6px;
+        }
+        .down{            
+            display: inline-block;
+            background-image: url(../project/imgs/down1.png);
+            background-position: center;
+            background-size: cover;
+            width: 25px;
+            height: 25px;
+            position: relative;
+            top:6px;
+        }
+        .gift{            
+            display: inline-block;
+            background-image: url(../project/imgs/gift.png);
+            background-position: center;
+            background-size: cover;
+            width: 23px;
+            height: 23px;
+            position: relative;
+            top:4px;
+        }
+        .like_str{
+            display: inline-block;
+            margin-left: 4px;
+            text-align:inherit;
+            color:rgba(0,0,0,0.6);
+        }
+        /* 수록곡 */
+        .songs_btn{
+            border: 0.5px solid rgba(94, 94, 94, 0.5);
+            border-radius: 20px 20px 20px 20px;
+            background-color: white;
+            box-shadow: 0;
+            width: 60px;
+            height: 26px;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+        .songs_btn_img{
+            position: relative;
+            top:2px
+        }
+        .songs_btn_str{
+            font-size: 13px;
+        }
+        .songs_table{
+            width: 100%;
+            height: 40px;
+            border-collapse: collapse ;
+        }
+        .songs_table thead, tbody{
+            border: 0px;
+        }
+        .songs_table thead tr td{
+            color: rgba(29, 29, 29, 0.808);
+            border-bottom: 1px solid rgba(94, 94, 94, 0.5);
+            border-top: 1px solid rgba(94, 94, 94, 0.5);
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .songs_table tbody tr td{
+            border-bottom: 1px solid rgba(94, 94, 94, 0.5);
+            font-size: 13px;
+            padding-left: 10px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .songs_table tr td input{
+            position: relative;
+            right: 14px;
+        }
+        .number{
+            font-size: 20px;
+            padding-left: 10px;
+        }
+        .song_doc_btn{
+            border: 0px;
+            background-color: white;
+        }
+        .song_doc_btn img{
+            width: 20px; 
+            height: 20px;
+            position: relative;
+            top:2px
+        }
+        .artist{
+            color: rgba(54, 54, 54, 0.561);
+        }
+        .song{
+            font-weight: 500;
+        }
+        .song_like_btn{
+            border: 0px;
+            background-color: white;
+            padding: 0;
+        }
+        .song_like_btn_heart img{
+            width:16px; 
+            height:16px;
+            position: relative;
+            top:3px;
+        }
+        .song_like_str{
+            color:rgba(54, 54, 54, 0.65);
+        }
+        .song_play_btn{            
+            border: 0px;
+            background-color: white;
+            padding: 0;
+            position: relative;
+            top:4px;
+        }
+        .song_play_btn img{
+            width: 25px; 
+            height: 25px;
+        }
+        /* 앨범소개 */
+        .album_itd{
+            padding-top: 5px;
+            color: rgba(54, 54, 54, 0.561);
+        }
+        .album_itd_spread{
+            text-align: center;
+        }
+        .album_itd_btn{
+            font-size: 13px;
+            padding:0px;
+            border:0;
+            background-color: white;
+            color: rgba(54, 54, 54, 0.731);
+        }
+        .album_itd_btn img{
+            width: 11px;
+            height: 11px;
+            position: relative;
+        }
+        /* 댓글 */
+        .comment{
+            border: 1px solid black;
+            background-color: #F5F5F5;
+            padding-top: 20px;
+            width: 100%;
+            height: 400px;
+            display: flex;
+        }
+        .userimg{
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 30px;
+            width:65px;
+            height: 65px;
+        }
+        .comment_box{
+            border: 1px solid black;
+            height: 100px;
+        }
+        .text_box{
+            border: 1px solid black;
+            width: 600px;
+            height: 100px;
+            font-size: 11px;
+            color: rgba(54, 54, 54, 0.409);
+        }
+        .comment_btn{
+            border: 1px solid black;
+            width: 150px;
+            height: 50px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <!--제목:앨범정보-->
+        <div>
+            <h2 class="title">앨범 정보</h2>
+        </div>
+
+        <!--앨범자켓과 앨범설명-->
+        <div class="album">
+            <!--앨범이미지-->
+            <div class ="album_img">
+                <img src="../project/imgs/네이비쿼카이미지.jpg" class="album_main_img">
+                <img src="../project/imgs/play.png" class="play_img">
+            </div>
+            <!--앨범정보-->
+            <div class="album_des">
+                <!--그룹-->
+                <p class="group">[싱글]</p>
+                <!--제목-->
+                <h2 class="album_title">Summer Dance</h2>
+                <!--가수-->
+                <p class="album_title2">네이비쿼카 (NavyQuokka)</p>
+                <!--설명-->
+                <div class="list1">
+                    <dl>
+                        <dt>발매일</dt>
+                        <dd>2023.06.30</dd>
+                        <dt>장르</dt>
+                        <dd>R&B/Soul, 인디음악</dd>
+                        <dt>발매사</dt>
+                        <dd>YG PLUS</dd>
+                        <dt>기획사</dt>
+                        <dd>NavyQuokka</dd>
+                    </dl>
+                </div>
+                <div class="list2">
+                    <dl>
+                        <dt>
+                            <img src="../project/imgs/star.jpg" class="star">
+                            <span>5.0점</span>
+                        </dt>
+                        <dd>
+                            <a>
+                                <span class="arrow_name">1명</span>
+                                <span class="arrow">></span>
+                            </a>
+                        </dd>
+                        <dt>댓글</dt>
+                        <dd>
+                            <a>
+                                <span class="arrow_name">1명</span>
+                                <span class="arrow">></span>
+                            </a>
+                        </dd>
+                        <dt>공유</dt>
+                        <dd>
+                            <div class="sns">
+                                <button class="user"></button>
+                                <button class="facebook"></button>
+                                <button class="twitter"></button>
+                            </div>
+                        </dd>
+                    </dl>
+                </div>
+                <!--좋아요,다운,선물-->
+                <div class="like_list">
+                    <!--좋아요-->
+                    <button class="like_btn">
+                        <span class="heart"></span>
+                        <span class="like_str">좋아요</span>
+                    </button>
+                    <!--앨범다운-->
+                    <button class="like_btn">
+                        <span class="down"></span>
+                        <span class="like_str">앨범다운</span>
+                        <span class="arrow">></span>
+                    </button>
+                    <!--FLAC다운-->
+                    <button class="like_btn">
+                        <span class="down"></span>
+                        <span class="like_str">FLAC앨범다운</span>
+                        <span class="arrow">></span>
+                    </button>
+                    <!--선물-->
+                    <button class="like_btn">
+                        <span class="gift"></span>  
+                        <span class="like_str">선물하기</span>
+                        <span class="arrow">></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!--제목:수록곡-->
+        <div>
+            <h2 class = title style="font-weight: 300;"> 수록곡</h2>
+        </div>
+        <!--수록곡-->
+        <div>
+            <!--수록곡 버튼-->
+            <div >
+                <!--듣기버튼-->
+                <button class="songs_btn">
+                    <span class="songs_btn_img">
+                        <img src="./imgs/play2.png" style="width: 15px; height: 15px;"></span>
+                    <span class="songs_btn_str">재생</span>
+                </button >
+                <!--담기버튼-->
+                <button class="songs_btn">
+                    <span class="songs_btn_img">
+                        <img src="./imgs/plus.png" style="width: 15px; height: 15px;"></span>
+                    <span class="songs_btn_str">담기</span>
+                </button>
+                <!--다운버튼-->
+                <button class="songs_btn">
+                    <span class="songs_btn_img">
+                        <img src="./imgs/down2.png" style="width: 17px; height: 15px;"></span>
+                    <span class="songs_btn_str">다운</span>
+                </button>
+                <!--FLAc버튼-->
+                <button class="songs_btn" style="width: 70px;">
+                    <span class="songs_btn_img">
+                        <img src="./imgs/down2.png" style="width: 17px; height: 15px;"></span>
+                    <span class="songs_btn_str">FLAC</span>
+                </button>
+                <!--선물버튼-->
+                <button class="songs_btn" style="width: 65px">
+                    <span class="songs_btn_img">
+                        <img src="./imgs/gift.png" style="width: 15px; height: 15px;"></span>
+                    <span class="songs_btn_str">선물</span>
+                </button>
+            </div>
+            <!--수록곡 목록-->
+            <div>
+                <table class="songs_table">
+                    <thead>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td style="width: 55px;">번호</td>
+                            <td></td>
+                            <td style="width: 560px;">곡정보</td>
+                            <td style="width: 90px;">좋아요</td>
+                            <td>
+                                <div>듣기</div>
+                            </td>
+                            <td>
+                                <div>담기</div>
+                            </td>
+                            <td>
+                                <div>다운</div>
+                            </td>
+                            <td>
+                                <div>뮤비</div>
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <input type="checkbox">
+                            </td>
+                            <td>
+                                <span class="number">1</span>
+                            </td>
+                            <td>
+                                <button class="song_doc_btn">
+                                    <img src="./imgs/doc.png">
+                                </button>
+                            </td>
+                            <td>
+                                <div class="song">Summer Dance</div>
+                                <div class="artist">네이비 쿼카(NavyQuokka)</div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button class="song_like_btn">
+                                        <span class="song_like_btn_heart">
+                                            <img src="./imgs/heart2.png">
+                                        </span>
+                                        <span class="song_like_str">123</span>
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <button  class="song_play_btn">
+                                        <img src="./imgs/play.png">
+                                    </button>
+                                </div>
+                            </td>
+                            <td>
+                                <button  class="song_play_btn">
+                                    <img src="./imgs/plus.png">
+                                </button>
+                            </td>
+                            <td>
+                                <button  class="song_play_btn">
+                                    <img src="./imgs/down2.png">
+                                </button>
+                            </td>
+                            <td>
+                                <button  class="song_play_btn">
+                                    <img src="./imgs/camera.png">
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--앨범소개-->
+        <div>
+            <h2 class = title style="font-weight: 300;"> 앨범 소개</h2>
+        </div>
+        <!-- 앨범소개글 -->
+        <div class="album_itd">
+            인디계의 '썸머퀸'네이비쿼카의 Summer Lovesong Part.3
+            <br>
+            네이비쿼카 (NavyQuokka) - [Summer Dance]
+            <br>
+            <br>
+            <br>
+            여러분 안녕하세요 네이비쿼카에요 :)
+            <br>
+            <br>
+            <br>
+            정말 무더운 여름이 올해도 어김없이 시작됐네요
+            <br>
+            매년 더 더워지는 것 같은 건 제 기분 탓일까요?
+            <br>
+            그럴때 시원한 멜론이랑 수박을 한입 먹으면 공기가 달라지는 것 같아요!
+            <br>
+            그러고는 당신과 행복한 춤을 추는 그런 꿈같은 여름을 보내길 바라요
+            <br>
+            여름 감기 조심하시고! 냉방병도 조심하시고! 
+            <br>
+            우리는 또 만나요 저의 음악이 여러분께 닿기를,
+            <br>
+            <br>
+            <br>
+            "Honeydew & Watermelon 한입 베어물면
+            <br>
+            여름 향기가 내 맘 가득히 la la Summer Dance"
+            <br>
+            <br>
+            *NavyQuokka
+            <br>
+            Instagram | @navyQuokka
+            <br>
+            Youtube | NavyQuokka
+            <div class="album_itd_spread">
+                <button class="album_itd_btn">
+                    <span>접기</span>
+                    <span>
+                        <img src="./imgs/arrow.png">
+                    </span>
+                </button>
+            </div>
+        </div>
+        <!--제목:댓글 -->
+        <div>
+            <h2 class = title style="font-weight: 300;"> 댓글</h2>
+        </div>  
+        <!-- 댓글 박스 -->
+        <div class="comment">
+            <!-- 유저이미지 -->
+            <div class="userimg">
+
+            </div>
+            <!-- 댓글 텍스트박스 -->
+            <div class="comment_box">
+                <textarea class="text_box">*게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요.
+                </textarea>
+            </div>
+            <!-- 등록버튼 -->
+            <div class="comment_upload_btn">
+                <button>등록</button>
+            </div>
+            <!-- 첨부버튼 -->
+            <div class="comment_btn"></div>
+        </div>
+
+
+
+    </div>
+
+</body>
+</html>

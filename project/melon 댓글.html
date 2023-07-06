@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            border:0.5px solid black;
+            width:1008px;
+            padding-top: 20px;
+            margin:0 auto;
+        }
+        .title{
+            border:0.5px solid black;
+            margin:0 auto;
+            padding-top: 10px;
+            padding-left: 10px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        /* 댓글 */
+        .comment{
+            border: 1px solid black;
+            background-color: #F5F5F5;
+            padding-top: 20px;
+            width: 100%;
+            height: 400px;
+            display: flex;
+        }
+        .userimg{
+            border: 1px solid black;
+            border-radius: 50%;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 30px;
+            width:65px;
+            height: 65px;
+        }
+        .comment_box{
+            border: 1px solid black;
+            height: 100px;
+        }
+        .text_box{
+            border: 1px solid black;
+            width: 600px;
+            height: 100px;
+            font-size: 11px;
+            color: rgba(54, 54, 54, 0.409);
+        }
+        .comment_btn{
+            border: 1px solid black;
+            width: 150px;
+            height: 50px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        
+        <!--제목:댓글 -->
+        <div>
+            <h2 class = title style="font-weight: 300;"> 댓글</h2>
+        </div>  
+        <!-- 댓글 박스 -->
+        <div class="comment">
+            <!-- 유저이미지 -->
+            <div class="userimg">
+
+            </div>
+            <!-- 댓글 텍스트박스 -->
+            <div class="comment_box">
+                <textarea class="text_box">*게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요.
+                </textarea>
+            </div>
+            <!-- 등록버튼 -->
+            <div class="comment_upload_btn">
+                <button>등록</button>
+            </div>
+            <!-- 첨부버튼 -->
+            <div class="comment_btn"></div>
+        </div>
+
+
+    </div>
+
+</body>
+</html>
