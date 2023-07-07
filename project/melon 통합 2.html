@@ -61,9 +61,6 @@
             padding-left: 30px ;
             color: #00CD3C;
         }
-        .jh_album_title2:hover{
-            text-decoration: underline;
-        }
         .jh_list1{
             margin: 0;
             padding-left: 30px ;
@@ -126,14 +123,6 @@
             height: 18px;
             margin-right: 3px;
             
-        }
-        .jh_user_ho{
-            border: 1px solid black;
-            font-size: 12px;
-            position: absolute;
-            background-color: white;
-            display: none;
-
         }
         .jh_facebook{
             background-image: url(../project/imgs/facebook.jpg);
@@ -206,11 +195,6 @@
             margin-left: 4px;
             text-align:inherit;
             color:rgba(0,0,0,0.6);
-        }
-        /* hover */
-        .jh_user:hover  .jh_user_ho{
-            display: block;
-            opacity: 1;
         }
         /* 수록곡 */
         .jh_songs_btn{
@@ -331,47 +315,51 @@
             background-color: #F5F5F5;
             padding: 15px 108px 8px 28px;
             max-width: 100%;
-            height: 145px;
+            height: 120px;
             position: relative;
         }
         .jh_userimg{
             background-image: url(./imgs/user2.png);
             background-position: center;
+            background-size: cover;
             border-radius: 50%;
             position: absolute;
-            left: 28px;
-            top: 30px;
-            width:80px;
-            height: 80px;
+            left: 24px;
+            top: 28px;
+            width:55px;
+            height: 55px;
             display: inline-block;
         }
         .jh_comment_box_wrap{
             position: absolute;
-            left: 130px;
+            left: 95px;
         }
         .jh_comment_box{
             width: 30px;
         }
         .jh_text_box{
-            width:740px;
-            height: 100px;
-            font-size: 13px;
+            width:800px;
+            height: 75px;
             resize: none;
+            font-size: 15px;
+        }
+        .jh_text_box::placeholder{
+            font-size: 13px;
             color: rgba(54, 54, 54, 0.409);
         }
         .jh_comment_upload_btn{
             border: 1px solid rgba(0, 0, 0, 0.261);
             background-color: rgb(253, 253, 253);
-            font-size: 24px;
-            font-weight: 700;
-            width: 100px;
-            height: 109px;
+            font-size: 15px;
+            font-weight: 600;
+            width: 83px;
+            height: 83px;
             position: absolute;
             right:15px;
             top:15px
         }
         .jh_comment_btn{
-            margin: 0;
+            margin-top: 5px;
             padding: 0;
         }
         .jh_comment_btn_add1{
@@ -410,12 +398,17 @@
             margin-left: -6px;
         }
         /* hover */
+        /* 테두리진하게 */
         .jh_comment_upload_btn:hover, .jh_comment_btn_add1:hover, .jh_comment_btn_add2:hover, .jh_comment_btn_add3:hover, .jh_comment_btn_add4:hover{
             border: 1px solid rgba(0, 0, 0, 0.608);
         }
-
+        /* 밑줄 */
+        .jh_album_title2:hover , .jh_arrow_name:hover , .jh_song:hover, .jh_artist:hover{
+            text-decoration: underline;
+        }
         
     </style>
+
 </head>
 <body>
     <div class="jh_main">
@@ -467,16 +460,17 @@
                         <dt>댓글</dt>
                         <dd>
                             <a>
-                                <span class="jh_arrow_name">1명</span>
+                                <span class="jh_arrow_name">1개</span>
                                 <span class="jh_arrow">></span>
                             </a>
                         </dd>
                         <dt>공유</dt>
                         <dd>
                             <div class="jh_sns">
-                                <button class="jh_user"></button>
-                                <button class="jh_facebook"></button>
-                                <button class="jh_twitter"></button>
+                                <button class="jh_user" title="친구에게 음악메시지 보내기"></button>
+                                <button class="jh_facebook" title="페이스북"></button>
+                                <button class="jh_twitter" title="트위터"></button>
+                                
                             </div>
                         </dd>
                     </dl>
@@ -484,40 +478,30 @@
                 <!--좋아요,다운,선물-->
                 <div class="jh_like_list">
                     <!--좋아요-->
-                    <button class="jh_like_btn">
+                    <button class="jh_like_btn" title="Love Dance 좋아요">
                         <span class="jh_heart"></span>
                         <span class="jh_like_str">좋아요</span>
                     </button>
                     <!--앨범다운-->
-                    <button class="jh_like_btn">
+                    <button class="jh_like_btn" title="엘범다운">
                         <span class="jh_down"></span>
                         <span class="jh_like_str">앨범다운</span>
                         <span class="jh_arrow">></span>
                     </button>
                     <!--FLAC다운-->
-                    <button class="jh_like_btn">
+                    <button class="jh_like_btn" title="FLAC앨범다운">
                         <span class="jh_down"></span>
                         <span class="jh_like_str">FLAC앨범다운</span>
                         <span class="jh_arrow">></span>
                     </button>
                     <!--선물-->
-                    <button class="jh_like_btn">
+                    <button class="jh_like_btn" title="선물하기">
                         <span class="jh_gift"></span>  
                         <span class="jh_like_str">선물하기</span>
                         <span class="jh_arrow">></span>
                     </button>
                 </div>
             </div>
-        </div>
-        <!-- hover -->
-        <div class="jh_user_ho">
-            친구에게 음악메시지 보내기
-        </div>
-        <div class="jh_facebook_ho">
-            페이스북
-        </div>
-        <div class="jh_twitter_ho">
-            트위터
         </div>
         <!--제목:수록곡-->
         <div>
@@ -528,31 +512,31 @@
             <!--수록곡 버튼-->
             <div >
                 <!--듣기버튼-->
-                <button class="jh_songs_btn">
+                <button class="jh_songs_btn" title="선택된 곡 듣기">
                     <span class="jh_songs_btn_img">
                         <img src="./imgs/play2.png" style="width: 15px; height: 15px;"></span>
                     <span class="jh_songs_btn_str">재생</span>
                 </button >
                 <!--담기버튼-->
-                <button class="jh_songs_btn">
+                <button class="jh_songs_btn" title="선택된 곡 담기">
                     <span class="jh_songs_btn_img">
                         <img src="./imgs/plus.png" style="width: 15px; height: 15px;"></span>
                     <span class="jh_songs_btn_str">담기</span>
                 </button>
                 <!--다운버튼-->
-                <button class="jh_songs_btn">
+                <button class="jh_songs_btn" title="선택된 곡 다운로드">
                     <span class="jh_songs_btn_img">
                         <img src="./imgs/down2.png" style="width: 17px; height: 15px;"></span>
                     <span class="jh_songs_btn_str">다운</span>
                 </button>
                 <!--FLAc버튼-->
-                <button class="jh_songs_btn" style="width: 70px;">
+                <button class="jh_songs_btn" style="width: 70px;" title="선택된 곡 원음 다운로드">
                     <span class="jh_songs_btn_img">
                         <img src="./imgs/down2.png" style="width: 17px; height: 15px;"></span>
                     <span class="jh_songs_btn_str">FLAC</span>
                 </button>
                 <!--선물버튼-->
-                <button class="jh_songs_btn" style="width: 65px">
+                <button class="jh_songs_btn" style="width: 65px" title="선택된 곡 선물하기">
                     <span class="jh_songs_btn_img">
                         <img src="./imgs/gift.png" style="width: 15px; height: 15px;"></span>
                     <span class="jh_songs_btn_str">선물</span>
@@ -564,7 +548,7 @@
                     <thead>
                         <tr>
                             <td>
-                                <input type="checkbox">
+                                <input type="checkbox" title="CD전체 선택">
                             </td>
                             <td style="width: 55px;">번호</td>
                             <td></td>
@@ -587,23 +571,23 @@
                     <tbody>
                         <tr>
                             <td>
-                                <input type="checkbox">
+                                <input type="checkbox" title="Love Dance 선택하기">
                             </td>
                             <td>
                                 <span class="jh_number">1</span>
                             </td>
                             <td>
-                                <button class="jh_song_doc_btn">
+                                <button class="jh_song_doc_btn" title="Love Dance 곡 정보">
                                     <img src="./imgs/doc.png">
                                 </button>
                             </td>
                             <td>
-                                <div class="jh_song">Summer Dance</div>
-                                <div class="jh_artist">네이비 쿼카(NavyQuokka)</div>
+                                <div class="jh_song" title="Love Dance 곡 듣기">Summer Dance</div>
+                                <div class="jh_artist" title="네이비 쿼카(NavyQuokka) - 페이지 이동">네이비 쿼카(NavyQuokka)</div>
                             </td>
                             <td>
                                 <div>
-                                    <button class="jh_song_like_btn">
+                                    <button class="jh_song_like_btn" title="Love Dance 좋아요">
                                         <span class="jh_song_like_btn_heart">
                                             <img src="./imgs/heart2.png">
                                         </span>
@@ -613,23 +597,23 @@
                             </td>
                             <td>
                                 <div>
-                                    <button  class="jh_song_play_btn">
+                                    <button  class="jh_song_play_btn" title="듣기">
                                         <img src="./imgs/play.png">
                                     </button>
                                 </div>
                             </td>
                             <td>
-                                <button  class="jh_song_play_btn">
+                                <button  class="jh_song_play_btn" title="담기">
                                     <img src="./imgs/plus.png">
                                 </button>
                             </td>
                             <td>
-                                <button  class="jh_song_play_btn">
+                                <button  class="jh_song_play_btn" title="다운로드">
                                     <img src="./imgs/down2.png">
                                 </button>
                             </td>
                             <td>
-                                <button  class="jh_song_play_btn">
+                                <button  class="jh_song_play_btn" title="뮤직비디오">
                                     <img src="./imgs/camera.png">
                                 </button>
                             </td>
@@ -644,7 +628,7 @@
         </div>
         <!-- 앨범소개글 -->
         <div class="jh_album_itd_spread">
-            <div class="jh_album_itd">
+            <div class="jh_album_itd" Id="spread_itd">
                 인디계의 '썸머퀸'네이비쿼카의 Summer Lovesong Part.3
                 <br>
                 네이비쿼카 (NavyQuokka) - [Summer Dance]
@@ -680,10 +664,10 @@
                 <br>
                 Youtube | NavyQuokka
             </div>
-            <button class="jh_album_itd_btn">
-                <span>펼치기</span>
+            <button class="jh_album_itd_btn" title="앨범소개 더보기" onclick="spread_btn()" Id="spread_btn">
+                <span Id="spread_btn_str">펼치기</span>
                 <span>
-                    <img src="./imgs/arrow2.png">
+                    <img src="./imgs/arrow2.png" Id="spread_btn_img">
                 </span>
             </button>
         </div>
@@ -691,34 +675,63 @@
         <!--제목:댓글 -->
         <div>
             <h2 class = "jh_title" style="font-weight: 300;"> 댓글</h2>
-        </div>  
-        <!-- 댓글 박스 -->
-        <div class="jh_comment">
-            <!-- 유저이미지 -->
-            <div class="jh_userimg"></div>
-            <!-- 댓글 텍스트박스 -->
-            <div class="jh_comment_box_wrap">
-                <div class="jh_comment_box">
-                    <textarea class="jh_text_box" placeholder="  *게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요."></textarea>
+        </div> 
+        <div>
+            <!-- 댓글 박스 -->
+            <div class="jh_comment">
+                <!-- 유저이미지 -->
+                <div class="jh_userimg"></div>
+                <!-- 댓글 텍스트박스 -->
+                <div class="jh_comment_box_wrap">
+                    <div class="jh_comment_box">
+                        <textarea class="jh_text_box"  title="리뷰 입력 창 (1000자 이내 입력 가능)" placeholder="  *게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요."></textarea>
+                        <div></div>
+                    </div>
+                <!-- 첨부버튼 -->
+                    <div class="jh_comment_btn">
+                        <button class="jh_comment_btn_add1" title="음악 첨부"></button>
+                        <button class="jh_comment_btn_add2" title="사진 첨부"></button>
+                        <button class="jh_comment_btn_add3" title="영상 첨부"></button>
+                        <button class="jh_comment_btn_add4" title="링크"></button>
+                    </div>
                 </div>
-            <!-- 첨부버튼 -->
-                <div class="jh_comment_btn">
-                    <button class="jh_comment_btn_add1"></button>
-                    <button class="jh_comment_btn_add2"></button>
-                    <button class="jh_comment_btn_add3"></button>
-                    <button class="jh_comment_btn_add4"></button>
+                <!-- 등록버튼 -->
+                <div>
+                    <button class="jh_comment_upload_btn" title="글 등록">등록</button>
                 </div>
             </div>
-            <!-- 등록버튼 -->
-            <div>
-                <button class="jh_comment_upload_btn">등록</button>
-            </div>
-
+            <!-- 버튼(최신, 추천, 답글) -->
+            <div></div>
+            <!-- 댓글 게시판 -->
+            <div></div>
+            <!-- 게시판 버튼 -->
+            <div></div>
+            <!-- 게시판 검색바 -->
+            <div></div>
         </div>
-
-
-
     </div>
 
+    <script>
+          let a=0;
+        function spread_btn(){
+            let itd = document.querySelector("#spread_itd");
+            let str = document.querySelector("#spread_btn_str");
+            let btn = document.querySelector("#spread_btn");
+            let img = document.querySelector("#spread_btn_img");
+            if(a == 0){
+                // itd.classList.add("hide");
+                itd.style.height="auto";
+                str.innerHTML="접기";
+                img.src="./imgs/arrow.png";
+                a=1;
+            }else if(a==1){
+                //itd.classList.add("show")
+                itd.style.height="110px";
+                str.innerHTML="펼치기";
+                img.src="./imgs/arrow2.png";
+                a=0;
+            }
+        }
+    </script>
 </body>
 </html>
