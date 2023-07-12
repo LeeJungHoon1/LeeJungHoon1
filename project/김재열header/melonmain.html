@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .jy_total {
+        position: relative;
+        width: 100%;
+        height: 192px;
+        /* border: 1px solid black; */
+        border-top: 4px solid #6ec953;
+        margin-top: -8px;
+        font-family: "돋움", Dotum, "맑은 고딕", "Malgun Gothic", "Apple Gothic",
+          sans-serif;
+      }
+      .jy_popup-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+
+      .jy_popup-content {
+        background: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .jy_popup-ticket {
+        /* border: 4px solid black; */
+        display: flex;
+        list-style: none;
+        width: 512px;
+        justify-content: center;
+        padding: 0;
+      }
+      .jy_popup-logo1 {
+        width: 236px;
+        height: 315px;
+        margin-right: 10px;
+      }
+      .jy_popup-logo2 {
+        width: 236px;
+        height: 315px;
+      }
+
+      .jy_popup-checkbox {
+        margin-bottom: 10px;
+      }
+      label {
+        font-size: 12px;
+        font-family: "Dotum", "돋음", "Apple Gothic", sans-serif;
+      }
+
+      .jy_popup-close {
+        background: white;
+        color: black;
+        border: 1px solid black;
+        width: 36px;
+        height: 26px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 265px;
+        font-size: 12px;
+        font-family: "Dotum", "돋음", "Apple Gothic", sans-serif;
+        letter-spacing: -1px;
+        box-shadow: 0px 0px 1px #000;
+        opacity: 0.5;
+      }
+      .jy_popup-close:hover {
+        opacity: 1;
+      }
+      .jy_header {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-decoration: none;
+        margin: 0 auto;
+        margin-top: 7px;
+      }
+
+      .line {
+        /* 1px아래 단위 설정 불가 흐리게해서 착시 이용 */
+        width: 100%;
+        margin-bottom: -40px;
+        border-bottom: 2px solid;
+        margin-top: 7px;
+      }
+
+      .w0_2 {
+        opacity: 0.1;
+      }
+      .jy_ticket a {
+        text-decoration: none;
+        color: gray;
+        font-weight: 300;
+        font-size: 15px;
+      }
+      .jy_ticket a:hover {
+        color: #6ec953;
+        font-weight: bolder;
+        font-size: 15px;
+      }
+
+      .jy_nav ul {
+        list-style: none;
+      }
+
+      .jy_nav li {
+        display: inline-block;
+        /* padding: 11px 7px; */
+        /* border-right: 1px solid black; */
+        margin: 0 7px 0 0;
+        padding-right: 7px;
+      }
+
+      .jy_nav li a {
+        text-decoration: none;
+        font-size: 12px;
+        color: gray;
+        font-weight: 100;
+      }
+
+      .jy_nav li a:hover {
+        text-decoration: none;
+        color: black;
+        font-weight: bolder;
+      }
+      .jy_body {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+      }
+
+      .jy_logo {
+        /* content: url(https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png); */
+        width: 142px;
+        height: 99px;
+        margin-left: -4px;
+        /* border: 1px solid black; */
+      }
+      .jy_searchwrapper {
+        display: flex;
+        width: 300px;
+        height: 30px;
+        margin: 15px;
+        padding: 5px;
+        border: 3px solid #6ec953;
+        border-radius: 30px;
+        margin-top: 33px;
+      }
+
+      .jy_searchwrapper input {
+        flex: 9;
+        padding-left: 7px;
+        border: none;
+        margin-left: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        /* outline: none; */
+      }
+      input:focus::placeholder {
+        color: transparent;
+      }
+
+      .jy_searchimg {
+        flex: 1;
+        margin-right: 8px;
+      }
+      /* .container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin: 0 auto;
+            } */
+
+      .rollingBtn {
+        border: 0px solid black;
+        font-size: smaller;
+        border-radius: 30px;
+        background-color: #6ec953;
+        color: white;
+        text-align: center;
+        margin-top: 15px;
+        width: 52px;
+        height: 19px;
+      }
+      /* 배너 컨테이너 */
+      .rollingbanner {
+        width: 160px;
+        height: 32px;
+        font-size: 0.8rem;
+        /* letter-spacing: -1px; */
+        padding: 7px 15px;
+        box-sizing: border-box;
+        /* background-color: #f0f0f0; */
+        /* border-radius: 16px; */
+        margin-top: 21px;
+      }
+
+      /* 롤링 배너 */
+      .rollingbanner > .wrap {
+        position: relative;
+        width: auto;
+        height: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        border: none;
+        top: -5px;
+        left: -1px;
+      }
+      .rollingbanner ul {
+        list-style: none;
+      }
+
+      .rollingbanner li {
+        position: absolute;
+        top: -18px;
+        left: 0;
+      }
+
+      /* 이전, 현재, 다음 롤링 배너 표시 */
+      .rollingbanner li.prev {
+        top: 18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.current {
+        top: 0;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner li.next {
+        top: -18px;
+      }
+      .rollingbanner a {
+        display: block;
+        display: -webkit-box;
+        width: 160px;
+        text-decoration: none;
+        -webkit-line-clamp: 1;
+        /* weblit-line-clamp는 보여지는 콘텐츠의 줄 수를 정할 수 있다 */
+        /*  하나만 보여야 되서 1로 지정*/
+        -webkit-box-orient: vertical;
+        /* orient는 박스의 흐름을 정한다 vertical=세로방향 흐름 */
+        /* horizontal은 가로 방향 흐름 */
+        overflow: hidden;
+        color: #000;
+        padding-top: 4px;
+      }
+
+      /* 반대 방향으로 진행 */
+      .rollingbanner.reverse li.prev {
+        top: -18px;
+        transition: top 0.5s ease;
+      }
+      .rollingbanner.reverse li.next {
+        top: 18px;
+      }
+
+      .menu {
+        display: flex;
+        position: relative;
+        /* border: 1px solid black; */
+      }
+      .menu-item {
+        width: 160px;
+        height: 20px;
+        /* border: 1px solid black; */
+
+        /* background-color: white; */
+        list-style: none;
+        /* overflow: hidden; */
+        position: absolute;
+        right: 38px;
+        top: -5px;
+      }
+
+      .sub-menu {
+        /*display:none    <->  display:block  => transition 효과 사용못함*/
+        height: 0;
+        background-color: white;
+        /* border: 1px solid black; */
+        border-top: 0px solid black;
+        overflow: hidden; /* 넘치는 내용은 감추기*/
+        text-overflow: ellipsis;
+        list-style: none;
+        padding-left: 0px;
+        font-size: 0.8rem;
+        width: 145px;
+      }
+      .sub-menu a {
+        text-decoration-line: none;
+        color: #000;
+      }
+      .sub-menu li {
+        padding-left: 15px;
+        padding-bottom: 6px;
+      }
+
+      .menu-item:hover {
+        /* height: 300px; */
+
+        display: visible;
+        /* border: 1px solid black; */
+      }
+      .menu-item:hover .sub-menu {
+        height: 100px;
+        border: 1px solid black;
+      }
+
+      .menu:hover .sub-menu {
+        height: 200px; /*height:0px  ;  overflow:hidden  -> height:300px*/
+      }
+      .menu:hover .menu-item {
+        height: 200px;
+      }
+
+      .jy_footer {
+        /* border: 1px solid black; */
+        width: 1008px;
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: -65px;
+        margin-bottom: -25px;
+      }
+
+      .jy_footer ul {
+        list-style: none;
+        margin-left: -60px;
+      }
+
+      .jy_footer li {
+        display: inline-block;
+        margin-left: 20px;
+      }
+
+      .jy_footer li a {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+      }
+
+      .jy_footer li a:hover {
+        text-decoration: none;
+        color: #6ec953;
+      }
+      .jy_mymusic a {
+        color: gray;
+        font-weight: bold;
+        text-decoration: none;
+        margin-right: 15px;
+      }
+      .jy_mymusic a:hover {
+        color: #6ec953;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jy_total">
+      <div class="jy_popup-container">
+        <div class="jy_popup-content">
+          <ul class="jy_popup-ticket">
+            <li class="jy_popup-logo1" title="상품 프로모션">
+              <a href="https://www.melon.com/buy/pamphlet/recommend.htm">
+                <img
+                  src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20230703101526.png/melon/quality/80"
+                  alt="popup-logo1"
+                  class="jy_popup-logo1"
+                />
+              </a>
+            </li>
+            <li class="jy_popup-logo2" title="Cosm 콘서트">
+              <a
+                href="https://ticket.melon.com/performance/index.htm?prodId=208418"
+              >
+                <img
+                  src="https://cdnimg.melon.co.kr/svc/images/main/imgUrl20230703101536.png/melon/quality/80"
+                  alt="popup-logo2"
+                  class="jy_popup-logo2"
+                />
+              </a>
+            </li>
+          </ul>
+          <div class="jy_popup-bottom">
+            <input
+              class="jy_popup-checkbox"
+              type="checkbox"
+              id="popup-checkbox"
+            />
+
+            <label for="popup-checkbox">오늘 하루 이창을 열지 않음</label>
+
+            <button class="jy_popup-close">닫기</button>
+          </div>
+        </div>
+      </div>
+      <div class="jy_header">
+        <div class="jy_ticket">
+          <a href="https://ticket.melon.com/main/index.htm" title="멜론티켓">
+            멜론티켓</a
+          >
+        </div>
+        <div class="jy_nav">
+          <ul>
+            <li>
+              <a
+                href="https://www.melon.com/commerce/pamphlet/web/sale_listMainView.htm"
+                title="이용권구매"
+              >
+                <img
+                  src="./icons8-film-soundtracks-25.png"
+                  style="width: 20px; height: 15px; margin-bottom: -3px"
+                />이용권구매</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.melon.com/event/vip/index.htm"
+                title="멜론라운지"
+                >멜론라운지</a
+              >
+            </li>
+
+            <li>
+              <a href="https://www.melon.com/event/index.htm" title="이벤트"
+                >이벤트</a
+              >
+            </li>
+
+            <li>
+              <a
+                href="https://www.melon.com/customer/announce/index.htm"
+                title="공지사항"
+                >공지사항</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- 착시선 -->
+      <div class="line w0_2" role="presentation"></div>
+
+      <div class="jy_body">
+        <!-- 로고 이미지 -->
+        <div class="jy_logo" title="MelOn 로고 - 홈으로 이동">
+          <a href="https://www.melon.com/">
+            <img
+              src="https://cdnimg.melon.co.kr/resource/image/web/common/logo_melon142x99.png"
+              alt="Logo"
+              class="jy_logo"
+            />
+          </a>
+        </div>
+        <!-- 검색바 -->
+        <div class="jy_searchwrapper">
+          <input
+            type="text"
+            alt="검색 입력 편집창"
+            placeholder="[멜론어학]함께 즐기며 배우는 외국어 강좌"
+          />
+          <a href="">
+            <img
+              src="./m_제목 없음.png"
+              onclick="alert('찾을 수 없습니다.')"
+              alt=""
+              class="jy_searchimg"
+              style="width: 28px; height: 28px"
+            />
+          </a>
+        </div>
+        <button class="rollingBtn">급상승</button>
+
+        <div class="rollingbanner">
+          <div class="wrap">
+            <ul class="innerwrap">
+              <li class="current">1. (여자)아이들</li>
+              <li class="next">2. BLACKPINK</li>
+              <li>3. 랄랄</li>
+              <li>4. 화사 (Hwa Sa)</li>
+              <li>5. 세븐틴</li>
+              <li>6. 마마무(MamaMoo)</li>
+              <li>7. 잔나비</li>
+              <li>8. 쿨 (COOL)</li>
+              <li>9. YENA (최예나)</li>
+              <li class="prev">10. 헤이즈 (Heize)</li>
+            </ul>
+          </div>
+        </div>
+        <ul class="menu">
+          <li class="menu-item">
+            <ul class="sub-menu">
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%28%EC%97%AC%EC%9E%90%29%EC%95%84%EC%9D%B4%EB%93%A4&section="
+                  >1. (여자)아이들</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/artist/timeline.htm?artistId=995169"
+                  >2. BLACKPINK</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%9E%84%EB%9E%84&section=&mwkLogType=T"
+                  >3. 랄랄</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%99%94%EC%82%AC&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >4. 화사 (Hwa Sa)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%84%B8%EB%B8%90%ED%8B%B4+%28SEVENTEEN%29&section="
+                  >5. 세븐틴 (SEVENTEEN)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EB%A7%88%EB%A7%88%EB%AC%B4&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >6. 마마무(MamaMoo)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%9E%94%EB%82%98%EB%B9%84&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >7. 잔나비</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=2ne1&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >8. 쿨 (COOL)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%EC%B5%9C%EC%98%88%EB%82%98&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >9. YENA (최예나)</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://www.melon.com/search/total/index.htm?q=%ED%97%A4%EC%9D%B4%EC%A6%88&section=&searchGnbYn=Y&kkoSpl=Y&kkoDpType=&mwkLogType=T"
+                  >10. 헤이즈 (Heize)</a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- 급상승 롤링 -->
+      <!-- <div class="container"> -->
+
+      <!-- </div> -->
+      <div class="jy_footer">
+        <!-- 아래 배너 -->
+        <ul>
+          <li><a href="https://www.melon.com/chart/index.htm">멜론차트</a></li>
+          <li><a href="https://www.melon.com/new/index.htm">최신음악</a></li>
+          <li>
+            <a href="https://www.melon.com/genre/song_list.htm?gnrCode=GN0100"
+              >장르음악</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/dj/today/djtoday_list.htm">멜론DJ</a>
+          </li>
+          <li><a href="https://www.melon.com/tv/index.htm">멜론TV</a></li>
+          <li>
+            <a href="https://www.melon.com/artistplus/todayupdate/index.htm"
+              >스타포스트</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/musicstory/today/index.htm"
+              >매거진</a
+            >
+          </li>
+          <li>
+            <a href="https://www.melon.com/melonaward/weekAward.htm"
+              >뮤직어워드</a
+            >
+          </li>
+          <li><a href="https://www.melon.com/edu/index.htm">어학</a></li>
+          <!-- 어학파트에 로그인 페이지 넣어야됨 -->
+        </ul>
+        <!-- 로그인 페이지 넣어야됨 마이뮤직 -->
+        <div class="jy_mymusic"><a href="#"> 마이뮤직</a></div>
+      </div>
+      <hr />
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const popupContainer = document.querySelector(".jy_popup-container");
+        const popupClose = document.querySelector(".jy_popup-close");
+
+        popupClose.addEventListener("click", function () {
+          popupContainer.style.display = "none";
+          popupClose.removeEventListener("click", closePopup);
+        });
+      });
+    </script>
+  </body>
+  <script>
+    let interval;
+    // addEventListener는 이벤트를 등록하는 방식이며 여러개의 이벤트핸들러를 등록가능
+    document.addEventListener("DOMContentLoaded", () => {
+      // 롤링 초기화
+      interval = window.setInterval(rollingCallback, 3000);
+    });
+
+    function rollingCallback() {
+      //.prev 클래스 삭제
+      document.querySelector(".rollingbanner .prev").classList.remove("prev");
+
+      //.current -> .prev
+      let current = document.querySelector(".rollingbanner .current");
+      current.classList.remove("current");
+      current.classList.add("prev");
+
+      //.next -> .current
+      let next = document.querySelector(".rollingbanner .next");
+      //다음 목록 요소가 널인지 체크
+      if (next.nextElementSibling == null) {
+        document
+          .querySelector(".rollingbanner ul li:first-child")
+          .classList.add("next");
+      } else {
+        //목록 처음 요소를 다음 요소로 선택
+        next.nextElementSibling.classList.add("next");
+      }
+      next.classList.remove("next");
+      next.classList.add("current");
+    }
+  </script>
+</html>

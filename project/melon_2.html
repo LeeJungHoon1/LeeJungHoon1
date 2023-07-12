@@ -6,17 +6,17 @@
     <title>Document</title>
     <style>
         .jh_main{
-            /* border:0.5px solid black; */
             width:1008px;
             padding: 20px 20px;
             margin:0 auto;
         }
+        .jh_main a{
+            text-decoration: none;
+        }
         .jh_title{
-            /* border:0.5px solid black; */
-            margin:0 auto;
-            padding-top: 10px;
+            margin:40px 0px 20px 0px;
             font-weight: 500;
-            margin-bottom: 10px;
+
         }
         /* 앨범정보 */
         .jh_album{
@@ -113,7 +113,7 @@
             color:rgba(0,0,0,0.5);
         }
         .jh_user{
-            background-image: url(../project/imgs/user.jpg);
+            background-image: url(./imgs/user.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -125,7 +125,7 @@
             
         }
         .jh_facebook{
-            background-image: url(../project/imgs/facebook.jpg);
+            background-image: url(./imgs/facebook.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -137,7 +137,7 @@
             padding: 0;
         }
         .jh_twitter{
-            background-image: url(../project/imgs/twitter.jpg);
+            background-image: url(./imgs/twitter.jpg);
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -162,7 +162,7 @@
         }
         .jh_heart{
             display: inline-block;
-            background-image: url(../project/imgs/heart.png);
+            background-image: url(./imgs/heart.png);
             background-position: center;
             background-size: cover;
             width: 25px;
@@ -172,7 +172,7 @@
         }
         .jh_down{            
             display: inline-block;
-            background-image: url(../project/imgs/down1.png);
+            background-image: url(./imgs/down1.png);
             background-position: center;
             background-size: cover;
             width: 25px;
@@ -182,7 +182,7 @@
         }
         .jh_gift{            
             display: inline-block;
-            background-image: url(../project/imgs/gift.png);
+            background-image: url(./imgs/gift.png);
             background-position: center;
             background-size: cover;
             width: 23px;
@@ -198,10 +198,9 @@
         }
         /* 수록곡 */
         .jh_songs_btn{
-            border: 0.5px solid rgba(94, 94, 94, 0.5);
+            border: 1px solid rgba(94, 94, 94, 0.5);
             border-radius: 20px 20px 20px 20px;
             background-color: white;
-            box-shadow: 0;
             width: 60px;
             height: 26px;
             padding: 0;
@@ -309,8 +308,8 @@
             height: 11px;
             position: relative;
         }
-        /* 댓글 */
-        .jh_comment{
+         /* 댓글 */
+         .jh_comment{
             border: 1px solid rgba(0, 0, 0, 0.294);
             background-color: #F5F5F5;
             padding: 15px 108px 8px 28px;
@@ -342,9 +341,10 @@
             height: 75px;
             resize: none;
             font-size: 15px;
+            padding-top: 5px;
         }
         .jh_text_box::placeholder{
-            font-size: 13px;
+            font-size: 11px;
             color: rgba(54, 54, 54, 0.409);
         }
         .jh_comment_upload_btn{
@@ -397,13 +397,301 @@
             height:30px;
             margin-left: -6px;
         }
+        .jh_cmt_top{
+            height: 18px;
+            margin-top: 10px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .jh_cmt_top_left{
+            float: left;
+        }
+        .jh_cmt_top_left span{
+            font-weight: 700;
+            color: #00CD3C;
+        }
+        .jh_cmt_top_right ul{
+            list-style: none;
+        }
+        .jh_cmt_top_right ul li{
+            float: right;
+            margin-right: 5px;
+        }
+        .jh_cmt_mid{
+            border: 1px solid #ccc;
+            border-left: 0;
+            border-right: 0;
+        }
+        .jh_cmt_mid ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .jh_cmt_mid ul li{
+            border-bottom: 1px solid #ccc;
+            padding: 15px 0px 5px 20px;
+            font-size: 12px;
+        }
+        .jh_cmt_mid_user{
+            position: relative;
+            
+        }
+        .jh_cmt_uearId{
+            float: left;
+            display: flex;
+        }
+        .jh_cmt_userImg{
+            width:55px;
+            height: 55px;
+            background-image: url(./imgs/user2.png);
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+
+        }
+        .jh_cmt_userImpo{
+            margin-top: 3px;
+            margin-left: 20px;
+        }
+        .jh_cmt_userComment{
+            padding-left: 175px;
+        }
+        .jh_cmt_userCmt{
+            margin-bottom: 3px;
+        }
+        .jh_cmt_userCmt_time{
+            margin-bottom: 8px;
+            color: rgba(54, 54, 54, 0.788);
+        }
+        .jh_cmt_userCmt_btn{
+            margin-bottom: 8px;
+        }
+        .jh_cmt_userCmt_btn button{
+            padding: 0;
+        }
+        .jh_cmt_replyBtn{
+            border: 0;
+            font-size: 12px;
+            background-color: white;
+        }
+        .jh_cmt_replyBtn span img{
+            width: 10px;
+            height: 10px;
+        }
+        .jh_cmt_userCnt_btn_add{
+            display: inline-block;
+            margin-right: 25px;
+            float: right;
+        }
+        .jh_cmt_goodBtn{
+            width:25px;
+            height: 25px;
+            background-image: url(./imgs/good.png);
+            background-position: center;
+            background-size: cover;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid rgb(211, 205, 205);
+            margin-left: 25px;
+        }
+        .jh_cmt_ngoodBtn{
+            width:25px;
+            height: 25px;
+            background-image: url(./imgs/notgood.png);
+            background-position: center;
+            background-size: cover;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid rgb(211, 205, 205);
+            margin-left: 25px;
+        }
+        .jh_cmt_reportBtn{
+            width:25px;
+            height: 25px;
+            background-image: url(./imgs/notgood.png);
+            background-position: center;
+            background-size: cover;
+            background-color: white;
+            border-radius: 50%;
+            border: 1px solid rgb(211, 205, 205);
+            margin-left: 25px;
+        }
+        .jh_cmt_btn_total{
+            padding-left: 30px;
+        }
+        .jh_cmt_replyBtn_add{
+            display: none;
+            background-color: #fafafa;
+            border-top: 1px dotted #d9d9d9;
+            padding: 10px 10px 10px 0;
+            position: relative;
+        }
+        .jh_cmt_reply_img{
+            float: left;
+            width: 18px;
+            height:18px;
+        }
+        .jh_cmt_replyBtn_textbox{
+            margin-left: 30px;
+        }
+        .jh_cmt_replyBtn_textbox input{
+            width: 650px;
+        }
+        .jh_cmt_replyBtn_uploadBtn{
+            width: 100px;
+            height: 23px;
+            font-size: 13px;
+            color: rgba(39, 38, 38, 0.788);
+            background-color: #fafafa;
+            border: 1px solid rgb(110, 109, 109);
+            border-radius: 3px;
+            position: absolute;
+            right: 20px;
+            top:9px;
+        }
+        .jh_cmt_bottom{
+            margin-top: 20px;
+            text-align: center;
+        }
+        .jh_cmt_bottom button{
+            background-color: white;
+            border:1px solid rgb(139, 139, 139);
+            border-radius: 3px;
+            box-shadow: 0 1px #53535380;
+            width: 25px;
+            height: 25px;
+        }
+        .jh_cmt_search{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .jh_cmt_search select{
+            width: 100px;
+        }
+        .jh_cmt_search input{
+            width: 200px;
+        }
+        .jh_cmt_search input::placeholder{
+            font-size: 11px;
+        }
+        .jh_cmt_search button{
+            height: 22px;
+            width: 40px;
+            font-size: 11px;
+            padding: 0;
+        }
+        /* 플레이리스트 */
+        .jh_playlist{
+            position: relative;
+            list-style: none;
+            margin: 0 0 0 -50px;
+            padding: 0;
+        }
+        .jh_pl_box{
+            margin: 20px 0px 0px 50px;
+            max-width: 475px;
+            max-height: 180px;
+            border: 1px solid green;
+            float:left;
+            border: 1px solid #e5e5e5;
+        }
+        .jh_pl_img{
+            position: relative;
+            float: left;
+            width: 180px;
+            height:180px;
+        }
+        .jh_pl_des{
+            float: left;
+            padding: 15px 10px 10px 15px;
+            width: 260px;
+            height: 160px;
+
+        }
+        .jh_pl_title{
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap; 
+            display: block;
+        } 
+        .jh_pl_title2{
+            margin-top: 10px ;
+            font-size: 13px;
+            color: #00CD3C;
+        }
+        .jh_pl_pdt{
+            margin-top: 10px ;
+            font-size: 13px;
+        }
+        .jh_pl_pdt button{
+            border: 0;
+            background-color: white;
+            
+        }
+        .jh_pl_pdt button img{
+            width: 17px;
+            height: 17px;
+            position: relative;
+            top: 3px;
+        }
+        .jh_pl_tag{
+            margin-top: 10px ;
+        }
+        .jh_pl_tag button{
+            margin-top: 5px;
+            border: 1px solid rgba(94, 94, 94, 0.5);
+            border-radius: 20px 20px 20px 20px;
+            background-color: white;
+            width: 60px;
+            height: 26px;
+        }
+        /* 좋아요 */
+        .jh_like{
+            margin-left: -40px;
+        }
+        .jh_like ul{
+            list-style: none;
+            height: 120px;
+        }
+        .jh_like ul li{
+            width: 249px;
+            float: left;
+            
+        }
+        .jh_like ul li img{
+            float: left;
+            width:55px;
+            height:55px;
+        }
+        .jh_like_user{
+            float: left;
+            width: 160px;
+            padding-top:5px;
+            margin-left: 10px;
+            font-size: 14px;
+        }
+        .jh_like_user_gen{
+            font-size: 12px;
+            color:rgba(39, 38, 38, 0.788);
+            margin-top: 5px;
+        }
+    
+        .jh_like_userTag1{
+            color: #f0780a;
+        }
+        .jh_like_userTag2{
+            color:#00CD3C;
+        }
+        
         /* hover */
         /* 테두리진하게 */
-        .jh_comment_upload_btn:hover, .jh_comment_btn_add1:hover, .jh_comment_btn_add2:hover, .jh_comment_btn_add3:hover, .jh_comment_btn_add4:hover{
+        .jh_cmt_bottom button:hover, .jh_cmt_replyBtn_uploadBtn:hover, .jh_cmt_goodBtn:hover, .jh_cmt_ngoodBtn:hover, .jh_cmt_reportBtn:hover, .jh_comment_upload_btn:hover, .jh_comment_btn_add1:hover, .jh_comment_btn_add2:hover, .jh_comment_btn_add3:hover, .jh_comment_btn_add4:hover{
             border: 1px solid rgba(0, 0, 0, 0.608);
         }
         /* 밑줄 */
-        .jh_album_title2:hover , .jh_arrow_name:hover , .jh_song:hover, .jh_artist:hover{
+        .jh_cmt_top_right ul li:hover, .jh_cmt_replyBtn:hover, .jh_pl_title2:hover, .jh_pl_title a:hover,.jh_like_user_name:hover, .jh_album_title2:hover , .jh_arrow_name:hover , .jh_song:hover, .jh_artist:hover{
             text-decoration: underline;
         }
         
@@ -421,8 +709,8 @@
         <div class="jh_album">
             <!--앨범이미지-->
             <div class ="jh_album_img">
-                <img src="../project/imgs/네이비쿼카이미지.jpg" class="jh_album_main_img">
-                <img src="../project/imgs/play.png" class="jh_play_img">
+                <img src="./imgs/navyQuokka.jpg" class="jh_album_main_img">
+                <img src="./imgs/play.png" class="jh_play_img">
             </div>
             <!--앨범정보-->
             <div class="jh_album_des">
@@ -431,7 +719,7 @@
                 <!--제목-->
                 <h2 class="jh_album_title">Summer Dance</h2>
                 <!--가수-->
-                <p class="jh_album_title2">네이비쿼카 (NavyQuokka)</p>
+                <a class="jh_album_title2" href="https://www.melon.com/artist/timeline.htm?artistId=2933594">네이비쿼카 (NavyQuokka)</a>
                 <!--설명-->
                 <div class="jh_list1">
                     <dl>
@@ -448,21 +736,17 @@
                 <div class="jh_list2">
                     <dl>
                         <dt>
-                            <img src="../project/imgs/star.jpg" class="jh_star">
+                            <img src="./imgs/star.jpg" class="jh_star">
                             <span>5.0점</span>
                         </dt>
                         <dd>
-                            <a>
                                 <span class="jh_arrow_name">1명</span>
                                 <span class="jh_arrow">></span>
-                            </a>
                         </dd>
                         <dt>댓글</dt>
                         <dd>
-                            <a>
-                                <span class="jh_arrow_name">1개</span>
+                                <span class="jh_arrow_name">2개</span>
                                 <span class="jh_arrow">></span>
-                            </a>
                         </dd>
                         <dt>공유</dt>
                         <dd>
@@ -664,7 +948,7 @@
                 <br>
                 Youtube | NavyQuokka
             </div>
-            <button class="jh_album_itd_btn" title="앨범소개 더보기" onclick="spread_btn()" Id="spread_btn">
+            <button class="jh_album_itd_btn" title="앨범소개 더보기" onclick="jh_spread_btn()" Id="spread_btn">
                 <span Id="spread_btn_str">펼치기</span>
                 <span>
                     <img src="./imgs/arrow2.png" Id="spread_btn_img">
@@ -672,8 +956,8 @@
             </button>
         </div>
 
-        <!--제목:댓글 -->
-        <div>
+         <!--제목:댓글 -->
+         <div>
             <h2 class = "jh_title" style="font-weight: 300;"> 댓글</h2>
         </div> 
         <div>
@@ -685,7 +969,6 @@
                 <div class="jh_comment_box_wrap">
                     <div class="jh_comment_box">
                         <textarea class="jh_text_box"  title="리뷰 입력 창 (1000자 이내 입력 가능)" placeholder="  *게시물의 저작권 등 분쟁, 개인정보 노출로 인한 책임은 작성자 또는 게시자에게 있음을 유의해 주세요."></textarea>
-                        <div></div>
                     </div>
                 <!-- 첨부버튼 -->
                     <div class="jh_comment_btn">
@@ -701,37 +984,217 @@
                 </div>
             </div>
             <!-- 버튼(최신, 추천, 답글) -->
-            <div></div>
+            <div class="jh_cmt_top">
+                <div class="jh_cmt_top_left">
+                    총 <span>2</span>개
+                </div>
+                <div class="jh_cmt_top_right">
+                    <ul>
+                        <li>답글순 <span>|</span></li> 
+                        <li>추천순 <span>|</span></li>
+                        <li>최신순 <span>|</span></li>
+                    </ul>
+                </div>
+            </div>
             <!-- 댓글 게시판 -->
-            <div></div>
+            <div class="jh_cmt_mid">
+                <ul>
+                    <li>
+                        <div class="jh_cmt_mid_user">
+                            <div class="jh_cmt_uearId">
+                                <div class="jh_cmt_userImg"></div>
+                                <div class="jh_cmt_userImpo">뻐미임당</div>
+                            </div>
+                            <div class="jh_cmt_userComment">
+                                <div class="jh_cmt_userCmt">잘들을게영</div>
+                                <div class="jh_cmt_userCmt_time"> 2323.07.10 19:49</div>
+                                <div class="jh_cmt_userCmt_btn">
+                                    <button class="jh_cmt_replyBtn" onclick="jh_spread_btn2(0)">답글 0개
+                                        <span><img src="imgs/arrow2.png" id="jh_cmt_spread"></span></button>
+                                    <div class="jh_cmt_userCnt_btn_add">
+                                    <button class="jh_cmt_goodBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    <button class="jh_cmt_ngoodBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    <button class="jh_cmt_reportBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    </div>
+                                </div>
+                                <div class="jh_cmt_replyBtn_add">
+                                    <img src="./imgs/cmt_arrow.png" class="jh_cmt_reply_img">
+                                    <div class="jh_cmt_replyBtn_textbox">
+                                        <input type="text" title="댓글 입력 창(200자 이내 입력 가능)" placeholder="답글을 입력해주세요.">
+                                </div>
+                                <button class="jh_cmt_replyBtn_uploadBtn" title="글 등록"> 등록</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="jh_cmt_mid_user">
+                            <div class="jh_cmt_uearId">
+                                <div class="jh_cmt_userImg"></div>
+                                <div class="jh_cmt_userImpo">이메린_</div>
+                            </div>
+                            <div class="jh_cmt_userComment">
+                                <div class="jh_cmt_userCmt">믿고 듣는..</div>
+                                <div class="jh_cmt_userCmt_time"> 2323.07.01 11:08</div>
+                                <div class="jh_cmt_userCmt_btn">
+                                    <button class="jh_cmt_replyBtn" title="답글 더보기" onclick="jh_spread_btn2(1)">답글 0개
+                                        <span><img src="imgs/arrow2.png" id="jh_cmt_spread"></span></button>
+                                    <div class="jh_cmt_userCnt_btn_add">
+                                    <button class="jh_cmt_goodBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    <button class="jh_cmt_ngoodBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    <button class="jh_cmt_reportBtn"><span class="jh_cmt_btn_total">0</span></button>
+                                    </div>
+                                </div>
+                                <div class="jh_cmt_replyBtn_add">
+                                    <img src="./imgs/cmt_arrow.png" class="jh_cmt_reply_img">
+                                    <div class="jh_cmt_replyBtn_textbox">
+                                        <input type="text" title="댓글 입력 창(200자 이내 입력 가능)" placeholder="답글을 입력해주세요.">
+                                </div>
+                                <button class="jh_cmt_replyBtn_uploadBtn" title="글 등록"> 등록</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
             <!-- 게시판 버튼 -->
-            <div></div>
+            <div class="jh_cmt_bottom"> 
+                <button><<</button>
+                <button><</button>
+                <button>1</button>
+                <button>></button>
+                <button>>></button>
+            </div>
             <!-- 게시판 검색바 -->
-            <div></div>
+            <div class="jh_cmt_search">
+                <select title="검색방법 선택">
+                    <option>내용</option>
+                    <option>작성자</option>
+                </select>
+                <input type="text" title="검색 입력 창 (검색어를 입력해 주세요)" placeholder="검색어를 입력해 주세요">
+                <button>검색</button>
+            </div>
         </div>
+        <!--제목:플레이이스트-->
+        <div>
+            <h2 class = "jh_title" style="font-weight: 300;"> 수록곡이 포함된 DJ 플레이리스트</h2>
+        </div>
+        <div style="margin: 0; padding: 0; width: 1008px; height: 220px;">
+            <ul class="jh_playlist">
+                <li class="jh_pl_box"> 
+                    <div class="jh_pl_img">
+                        <img src="./imgs/PL1.jpg">
+                    </div>
+                    <div class="jh_pl_des">
+                        <div class="jh_pl_title" title=" 카페에서 틀어 놓으면 자꾸 물어보는 나만 아는 명곡 TOP100-이동"> 
+                            <a>카페에서 틀어 놓으면 자꾸 물어보는 나만 아는 명곡 TOP100</a></div>
+                        <div class="jh_pl_title2">손익분기점.</div>
+                        <div class="jh_pl_pdt">
+                            <button class="jh_pl_pdtBtn"><img src="./imgs/heart2.png" class="jh_pl_pdtImg"> <span class="jh_pl_pdtBtn_total">0</span> </button>| 101곡
+                        </div>
+                        <div class="jh_pl_tag">
+                            <button>#띵곡</button>
+                            <button>#명곡</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="jh_pl_box">
+                    <div class="jh_pl_img">
+                        <img src="./imgs/PL2.jpg">
+                    </div>
+                    <div class="jh_pl_des">
+                        <div class="jh_pl_title" title="혼자 듣기 아까운 인디 감성 노래 추천 -이동">
+                            <a>혼자 듣기 아까운 인디 감성 노래 추천</a> </div>
+                        <div class="jh_pl_title2">SoulMuse</div>
+                        <div class="jh_pl_pdt">
+                            <button><img src="./imgs/heart2.png"> 0 </button>| 342곡
+                        </div>
+                        <div class="jh_pl_tag">
+                            <button>#인디</button>
+                            <button>#감성</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--제목:좋아요 한 사람-->
+        <div style="border-bottom:1px solid #ccc; margin-top: 10px;">
+            <h2 class = "jh_title" style="font-weight: 300;">좋아요 한 사람</h2>
+        </div>
+        <div class="jh_like">
+            <ul>
+                <li>
+                    <img src="./imgs/user2.png">
+                    <div class="jh_like_user">
+                        <div class="jh_like_user_name"><span class="jh_like_userTag1">DJ</span> SoulMuse</div>
+                        <div class="jh_like_user_gen">발라드</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="./imgs/user2.png">
+                    <div class="jh_like_user">
+                        <div class="jh_like_user_name"><span class="jh_like_userTag2">DJ</span> 맹구121</div>
+                        <div class="jh_like_user_gen">POP</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="./imgs/user2.png">
+                    <div class="jh_like_user">
+                        <div class="jh_like_user_name"><span class="jh_like_userTag2">DJ</span> cjdouble.m</div>
+                        <div class="jh_like_user_gen">댄스</div>
+                    </div>
+                </li>
+                <li>
+                    <img src="./imgs/user2.png">
+                    <div class="jh_like_user">
+                        <div class="jh_like_user_name"> <span class="jh_like_userTag2">DJ</span> Hel_eN</div>
+                        <div class="jh_like_user_gen">해외 랩/힙합</div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        
     </div>
 
+
+
+
     <script>
-          let a=0;
-        function spread_btn(){
+        let jh_a=0;
+        function jh_spread_btn(){
             let itd = document.querySelector("#spread_itd");
             let str = document.querySelector("#spread_btn_str");
-            let btn = document.querySelector("#spread_btn");
             let img = document.querySelector("#spread_btn_img");
-            if(a == 0){
+            if(jh_a == 0){
                 // itd.classList.add("hide");
                 itd.style.height="auto";
                 str.innerHTML="접기";
                 img.src="./imgs/arrow.png";
-                a=1;
-            }else if(a==1){
+                jh_a=1;
+            }else if(jh_a==1){
                 //itd.classList.add("show")
                 itd.style.height="110px";
                 str.innerHTML="펼치기";
                 img.src="./imgs/arrow2.png";
-                a=0;
+                jh_a=0;
             }
         }
+        function jh_spread_btn2(p){
+            let itd = document.querySelectorAll(".jh_cmt_replyBtn_add");
+            let img = document.querySelector("#jh_cmt_spread");
+            if(jh_a == 0){
+                itd[p].style.display="block";
+                img.src="./imgs/arrow.png";
+                jh_a=1;
+            }else if(jh_a==1){
+                itd[p].style.display="none";
+                img.src="./imgs/arrow2.png";
+                jh_a=0;
+            }
+        }
+
+
     </script>
 </body>
 </html>
